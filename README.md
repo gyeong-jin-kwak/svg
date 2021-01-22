@@ -28,3 +28,30 @@ svg {
 * [svg 압축](https://jakearchibald.github.io/svgomg/)
 * 'paste markup' 에 코드 붙혀넣기
 * 'copy as text' 혹은 파일 다운로드 사용
+
+## SVG Style, Script 를 SVG 태그 안으로
+* 스타일을 `<svg></svg>` 태그 안으로 넣을 수 있음
+* 장점: svg 단독으로 사용할 수 있음
+* 안전장치 `<![CDATA[` `]]>` : 파서에서 오류나는 것을 방지
+```
+<style>
+<!-- <![CDATA[ -->
+    .face {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        width: 200px;
+    }
+
+    .face__hair {
+        fill: blueviolet;
+    }
+<!-- ]]> -->
+</style>
+```
+
+## SVG Option
+* fill : 색을 채울 때 
